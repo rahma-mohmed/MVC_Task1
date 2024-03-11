@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+
+
+    .card {
+        display: inline-block;
+        width: 30%;
+        border: 1px solid #ccc;
+        background-color: rgb(255, 255, 255);
+        width: 21.25em;
+        box-shadow: 0 10px 35px rgba(70, 162, 100, 0.25);
+        border-radius: 15px;
+        padding: 25px;
+        margin: 10px;
+        transition: 0.7s ease;
+    }
+
+        .card:hover {
+            background-color: rgba(237, 174, 237, 0.25);
+            transform: scale(1.1);
+        }
+
+    .card-header, .card-body, .card-footer {
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+
+
+
+
+<div class="card">
+    <div class="card-header">(@Model.Id)  @Model.Name</div>
+    <div class="card-body">
+        <h4 class="card-title">Description..</h4>
+        <p class="card-text"><img src="\Images\@Model.Image" style="width:200px; height:150px ; position :center" /></p>
+    </div>
+    <div class="card-footer">@Model.Address</div>
+    <br>
+</div>

@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<style>
+
+    .button {
+        outline: none;
+        color: rgb(255, 255, 255);
+        padding: 4px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border: 2px dashed rgb(70, 162, 100);
+        border-radius: 15px;
+        background-color: rgb(70, 162, 100);
+        box-shadow: 0 0 0 4px #EADDCA, 1px 1px 3px 2px rgba(0, 0, 0, 0.5);
+        transition: .1s ease-in-out, .4s color;
+    }
+
+        .button:active {
+            transform: translateX(0.1em) translateY(0.1em);
+            box-shadow: 0 0 0 4px #EADDCA, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+        }
+    div.card {
+        display: inline-block;
+        width: 20%;
+        border: 1px solid #ccc;
+        background-color: rgb(255, 255, 255);
+        width: 20em;
+        box-shadow: 0 10px 35px rgba(70, 162, 100, 0.25);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 10px;
+        transition: 0.7s ease;
+    }
+        .card:hover {
+            background-color: rgb(193, 246, 213);
+            transform: scale(1.1);
+        }
+
+    .card-header, .card-body, .card-footer {
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+
+@foreach(var item in Model)
+{
+    <div class="card">
+        <div class="card-header">(@item.Id)  @item.Name</div>
+        <div class="card-body">
+            <h4 class="card-title">Description..</h4>
+            <p class="card-text"><img src="\Images\@item.Image" style="width:200px; height:150px ; position :center" /></p>
+        </div>
+        <div class="card-footer">@item.Address</div>
+        <br>
+        <a asp-controller="Student" asp-action="Details" asp-route-id="@item.Id"><input type="button" value="@item.Name" class="button"></a>
+    </div>
+}
